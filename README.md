@@ -1,1 +1,1 @@
-# -start-angular-material-NgRx
+# start-angular-material-NgRx
