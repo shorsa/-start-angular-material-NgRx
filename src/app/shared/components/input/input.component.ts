@@ -117,6 +117,6 @@ export class InputComponent extends ValueAccessorBase<string> implements OnInit,
 
   changeShowPassword(): void {
     this.showPassword = !this.showPassword;
-    this.inputType = this.typeInput;
+    this.inputType = this.showPassword ? 'text' : 'password';
   }
 }
