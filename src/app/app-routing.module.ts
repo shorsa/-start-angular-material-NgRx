@@ -12,6 +12,10 @@ const routes: Routes = [
     redirectTo: RoutesConstants.AUTH_INDEX,
     pathMatch: 'full'
   },
+  {
+    path: '**',
+    redirectTo: RoutesConstants.AUTH_INDEX,
+  },
 ];
 
 @NgModule({

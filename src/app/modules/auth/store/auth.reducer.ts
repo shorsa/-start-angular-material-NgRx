@@ -2,20 +2,16 @@ import { Action, ActionReducer, createReducer, on } from '@ngrx/store';
 import { AuthState } from '.';
 import * as authActions from './auth.actions';
 
-const initialState: AuthState = {
-  data: undefined
+export const initialState: AuthState = {
+  accessToken: undefined
 };
 
-const authReducer: ActionReducer<AuthState, Action> =
+export const AuthReducer: ActionReducer<AuthState, Action> =
   createReducer(
     initialState,
     on(
-      authActions.exampleSuccess,
-      (state: AuthState, data: any): AuthState =>
-        ({ ...state, data })
+      authActions.signInSuccess,
+      (state: AuthState, { payload }): AuthState =>
+        ({ ...state, accessToken: payload.accessToken })
     ),
   );
-
-export function AuthReducer(state: AuthState, action: Action) {
-  return authReducer(state, action);
-}

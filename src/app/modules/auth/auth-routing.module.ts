@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RoutesConstants } from 'src/app/core/constants/routes.constants';
-import { SignInModule } from './pages/sign-in/sign-in.module';
 import { AuthLayoutComponent } from './components/auth-layout/auth-layout.component';
 
 
@@ -11,12 +10,12 @@ const routes: Routes = [
     component: AuthLayoutComponent,
     children: [
       {
-        path: RoutesConstants.INDEX,
+        path: RoutesConstants.SIGN_IN,
         loadChildren: () => import('./pages/sign-in/sign-in.module').then(m => m.SignInModule)
       },
       {
         path: RoutesConstants.INDEX,
-        redirectTo: RoutesConstants.INDEX,
+        redirectTo: RoutesConstants.SIGN_IN,
         pathMatch: 'full'
       },
     ]

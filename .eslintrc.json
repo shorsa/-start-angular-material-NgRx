@@ -23,7 +23,6 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "app",
             "style": "camelCase"
           }
         ],
@@ -53,7 +52,10 @@
       ],
       "extends": [
         "plugin:ngrx/recommended"
-      ]
+      ],
+      "rules": {
+        "ngrx/use-consistent-global-store-name": ["warn", "store$"]
+      }
     }
   ]
 }

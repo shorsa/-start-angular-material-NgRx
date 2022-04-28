@@ -1,9 +1,9 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { ReducerNodesEnum } from 'src/app/app-store';
+import { AppReducersEnum } from 'src/app/core/store';
 import { AuthState } from '.';
 
-const authFeatureSelector = createFeatureSelector<AuthState>(ReducerNodesEnum.auth);
+const selectAuth = createFeatureSelector<AuthState>(AppReducersEnum.auth);
 
-export const userDataSelector = createSelector(authFeatureSelector,
-  (state: AuthState) => state.data
+export const selectAccessToken = createSelector(selectAuth,
+  (state: AuthState) => state.accessToken
 );
